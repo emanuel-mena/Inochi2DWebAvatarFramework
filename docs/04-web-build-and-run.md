@@ -5,7 +5,7 @@
 Goal: validate both web flows:
 
 - `inox2d/examples/render-webgl` with Trunk
-- `inochi_web` with wasm-pack and a local HTTP server
+- `inochi_web/examples/python-server` with wasm-pack and a local HTTP server
 
 ## A) `render-webgl` via Trunk
 
@@ -57,7 +57,7 @@ Expected result:
 - Browser opens local URL.
 - Canvas appears and renders the puppet.
 
-## B) `inochi_web` via wasm-pack
+## B) `inochi_web/examples/python-server` via wasm-pack + Python
 
 ### 1. Validate wasm target build
 
@@ -77,19 +77,19 @@ Expected result:
 From `inochi_web/`:
 
 ```bash
-wasm-pack build --target web --out-dir pkg
+wasm-pack build --target web --out-dir examples/python-server/app/pkg
 ```
 
 Expected result:
 
-- `pkg/` contains fresh `inochi_viewer_bg.wasm`, JS glue, and type files.
+- `examples/python-server/app/pkg/` contains fresh `inochi_viewer_bg.wasm`, JS glue, and type files.
 
-### 3. Serve with local HTTP server
+### 3. Serve with the dedicated Python server script
 
 From `inochi_web/`:
 
 ```bash
-python -m http.server 8080
+python examples/python-server/server.py
 ```
 
 Open:
@@ -99,18 +99,19 @@ http://127.0.0.1:8080
 ```
 
 Then load your `.inp` or `.inx` file through the UI.
+You can also review `inochi_web/examples/python-server/README.md` for local example details.
 
-Important: do not open `index.html` via `file://`, because browsers block required module/wasm behavior there.
+Important: do not open `examples/python-server/app/index.html` via `file://`, because browsers block required module/wasm behavior there.
 
 ## Web Path Success Checklist
 
 - `cargo check` passes for wasm targets.
 - Trunk path renders with `assets/puppet.inp`.
-- `inochi_web` path loads `pkg/` output and lets you open a model file.
+- `inochi_web` Python-server path loads `examples/python-server/app/pkg/` output and lets you open a model file.
 
 If something fails, go to [06-troubleshooting.md](06-troubleshooting.md).
 
 ## Visuals (Planned for v2)
 
 - Screenshot of Trunk app running.
-- Screenshot of `inochi_web` UI after loading a model.
+- Screenshot of `inochi_web/examples/python-server` UI after loading a model.

@@ -21,7 +21,7 @@ Use this page when a command fails. Each row gives:
 | `failed to read ... inox2d` path/dependency errors | `git submodule status` | Run `git submodule update --init --recursive` from root. | `git submodule status` |
 | Wrong `inox2d` source (upstream instead of fork) | `git -C inox2d remote -v` | `git -C inox2d remote set-url origin https://github.com/SpatialLab-UCENFOTEC/inox2d.git` | `git -C inox2d remote -v` |
 | `render-webgl` shows network/404 for `assets/puppet.inp` | Check browser devtools network panel or verify file path on disk. | Create `inox2d/examples/render-webgl/assets/` and add `puppet.inp`. | `trunk serve --open` |
-| Browser page is blank when opening `inochi_web/index.html` directly | Check browser URL. If it starts with `file://`, this is the issue. | Serve with HTTP: `python -m http.server 8080` inside `inochi_web/`. | Open `http://127.0.0.1:8080` |
+| Browser page is blank when opening `inochi_web/examples/python-server/app/index.html` directly | Check browser URL. If it starts with `file://`, this is the issue. | Serve with HTTP: `python examples/python-server/server.py` inside `inochi_web/`. | Open `http://127.0.0.1:8080` |
 | OpenGL example fails to open window/context | Re-run with logs: `cargo run -p render-opengl -- /path/to/model.inp` | Update GPU drivers and run on a desktop session with graphics support. | Re-run the same command |
 
 ## Fast Validation Commands
@@ -41,6 +41,7 @@ Then:
 ```bash
 cd ../inochi_web
 cargo check --target wasm32-unknown-unknown
+wasm-pack build --target web --out-dir examples/python-server/app/pkg
 ```
 
 ## Still Stuck

@@ -4,15 +4,16 @@ target/
 
 # WebAssembly and generated web bundles
 inochi_web/pkg/
-inochi_web/www/pkg/
+inochi_web/examples/python-server/app/pkg/
 
 # Common temp/log artifacts
 *.log
 *.tmp
 *.temp
 *.bak
+__pycache__/
+*.pyc
 
 # OS/editor noise
 .DS_Store
 Thumbs.db
-

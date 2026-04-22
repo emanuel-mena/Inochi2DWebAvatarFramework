@@ -1,0 +1,194 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a1a2e;
+  display: flex;
+  height: 100vh;
+  font-family: sans-serif;
+  color: #eee;
+  overflow: hidden;
+}
+
+#sidebar {
+  width: 240px;
+  min-width: 240px;
+  background: #12122a;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 12px;
+  border-right: 1px solid #2a2a4a;
+  overflow-y: auto;
+}
+
+h2 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #555;
+  border-bottom: 1px solid #222240;
+  padding-bottom: 7px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-group label {
+  font-size: 0.76rem;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-group label span {
+  color: #ccc;
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #7c6af7;
+  cursor: pointer;
+}
+
+button {
+  background: #7c6af7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  width: 100%;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: #6a57e0;
+}
+
+button.secondary {
+  background: #1e1e3a;
+  border: 1px solid #333360;
+  color: #888;
+}
+
+button.secondary:hover {
+  background: #2a2a4a;
+  color: #eee;
+}
+
+#file-label {
+  background: #1a1a38;
+  border: 1px dashed #3a3a6a;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #666;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  line-height: 1.6;
+}
+
+#file-label:hover {
+  border-color: #7c6af7;
+  color: #bbb;
+}
+
+#file-label small {
+  color: #444;
+}
+
+#model-file {
+  display: none;
+}
+
+#status {
+  font-size: 0.7rem;
+  color: #444;
+  text-align: center;
+}
+
+#params-section {
+  display: none;
+}
+
+#params-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.param-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.param-header {
+  font-size: 0.72rem;
+  color: #7c6af7;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.param-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.param-row label {
+  font-size: 0.7rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.param-row label span {
+  color: #aaa;
+  font-variant-numeric: tabular-nums;
+}
+
+#canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  background: #0d0d1a;
+}
+
+#canvas-container.grabbing {
+  cursor: grabbing;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#hud {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 0.65rem;
+  color: #333;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  line-height: 1.8;
+  text-align: right;
+  display: flex;
+  gap: 12px;
+}

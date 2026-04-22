@@ -43,6 +43,7 @@ Then:
 ```bash
 cd ../inochi_web
 cargo check --target wasm32-unknown-unknown
+wasm-pack build --target web --out-dir examples/python-server/app/pkg
 ```
 
 ## 5. Clean Setup Reproduction Gate

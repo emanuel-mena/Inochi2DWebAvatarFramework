@@ -46,7 +46,7 @@ Expected outcome:
 
 - You can run the OpenGL example.
 - You can run the WebGL example with Trunk.
-- You can run `inochi_web` in a browser with a local server.
+- You can run `inochi_web/examples/python-server` in a browser with a local server.
 
 ### I want to build it
 
@@ -61,7 +61,7 @@ Read:
 Expected outcome:
 
 - You can run native and wasm `cargo check` commands successfully.
-- You can rebuild wasm output for `inochi_web`.
+- You can rebuild wasm output for `inochi_web/examples/python-server`.
 - You can quickly diagnose common setup/build failures.
 
 ### I want to integrate it
@@ -86,5 +86,5 @@ This v1 docs set is intentionally text plus commands only.
 Planned additions:
 
 - Setup screenshots by operating system.
-- Build/run success screenshots for OpenGL, Trunk WebGL, and `inochi_web`.
+- Build/run success screenshots for OpenGL, Trunk WebGL, and `inochi_web/examples/python-server`.
 - Architecture and build-flow diagrams.
