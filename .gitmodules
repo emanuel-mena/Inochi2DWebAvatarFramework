@@ -1,0 +1,3 @@
+[submodule "inox2d"]
+	path = inox2d
+	url = https://github.com/SpatialLab-UCENFOTEC/inox2d.git

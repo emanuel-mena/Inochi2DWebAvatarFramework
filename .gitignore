@@ -1,0 +1,18 @@
+# Build artifacts
+target/
+**/target/
+
+# WebAssembly and generated web bundles
+inochi_web/pkg/
+inochi_web/www/pkg/
+
+# Common temp/log artifacts
+*.log
+*.tmp
+*.temp
+*.bak
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
